@@ -12,15 +12,19 @@ module And_Gate_TB();
        r_In1 <= 1'b0;
        r_In2 <= 1'b0;
        #10; //Espera de 10 ns.
+       assert(w_Out==1'b0);
        r_In1 <= 1'b0;
        r_In2 <= 1'b1;
        #10;
+       assert(w_Out==1'b0);
        r_In1 <= 1'b1;
        r_In2 <= 1'b0;
        #10;
+       assert(w_Out==1'b0);
        r_In1 <= 1'b1;
        r_In2 <= 1'b1;
        #10;
+       assert(w_Out==1'b1);
        $finish();
     end
 endmodule
